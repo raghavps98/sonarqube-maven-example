@@ -10,6 +10,16 @@ pool:
   name: 'Agentpool'
 
 steps:
+- task: SonarCloudPrepare@3
+  displayName: Prepare sonar analysis
+  inputs:
+    SonarQube: 'SonarQube Cloud'
+    organization: 'canarys-sonar'
+    scannerMode: 'other'
+    projectName: sonarqube-maven-example
+    projectKey: canarys-sonar_sonarqube-maven-example
+    sonar.branch.name: master
+
 - task: Maven@4
   displayName: Maven build 
   inputs:
@@ -21,16 +31,6 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-
-- task: SonarCloudPrepare@3
-  displayName: Prepare sonar analysis
-  inputs:
-    SonarQube: 'SonarQube Cloud'
-    organization: 'canarys-sonar'
-    scannerMode: 'other'
-    projectName: sonarqube-maven-example
-    projectKey: canarys-sonar_sonarqube-maven-example
-    sonar.branch.name: master
 
 - task: Maven@4
   displayName: Maven + sonar analysis
