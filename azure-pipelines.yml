@@ -10,7 +10,7 @@ pool:
   name: 'Agentpool'
 
 steps:
-- task: Maven@3
+- task: Maven@4
   displayName: Maven build 
   inputs:
     mavenPomFile: 'pom.xml'
