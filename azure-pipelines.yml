@@ -21,18 +21,6 @@ steps:
     sonar.branch.name: master
 
 - task: Maven@4
-  displayName: Maven build 
-  inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '17'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
-
-- task: Maven@4
   displayName: Maven + sonar analysis
   inputs:
     mavenPomFile: 'pom.xml'
