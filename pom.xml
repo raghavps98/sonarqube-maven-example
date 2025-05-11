@@ -53,10 +53,10 @@
                     http://localhost:9000
                 </sonar.host.url>
                       </properties>
-                     <properties>
+            <properties>          
   <sonar.organization>canarys-sonar</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-</properties>
+                      </properties>
            
         </profile>
         <profile>
