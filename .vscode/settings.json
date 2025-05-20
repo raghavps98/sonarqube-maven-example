@@ -3,4 +3,6 @@
         "connectionId": "canarys-sonar",
         "projectKey": "canarys-sonar_sonarqube-maven-example"
     }
+,
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
