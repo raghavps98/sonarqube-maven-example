@@ -31,6 +31,8 @@
                     <groupId>org.sonarsource.scanner.maven</groupId>
                     <artifactId>sonar-maven-plugin</artifactId>
                     <version>3.6.0.1398</version>
+                    <target>1.8</target>
+                    <source>1.8</source>
                 </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
@@ -48,15 +50,9 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <!-- Optional URL to server. Default value is http://localhost:9000 -->
-                <sonar.host.url>
-                    http://localhost:9000
-                </sonar.host.url>
+             <sonar.organization>canarys-sonar</sonar.organization>
+             <sonar.host.url>https://sonarcloud.io</sonar.host.url>   
                       </properties>
-                     <properties>
-  <sonar.organization>canarys-sonar</sonar.organization>
-  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-</properties>
            
         </profile>
         <profile>
